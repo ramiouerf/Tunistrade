@@ -1,0 +1,42 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ps="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/template/layout.xhtml">
+
+	<ui:define name="pageTitle">Login</ui:define>
+	<ui:define name="header">
+		
+	</ui:define>
+	<ui:define name="content">
+
+
+		<div class="row-fluid">
+			<div class="jumbotron">
+			<h:graphicImage library="img" name="logo.png" width="150"
+							height="150" />
+							<br /> <br />
+				<h2>TuniTrade</h2>
+			</div>
+		</div>
+
+		<div class="row-fluid">
+			<div class="span4 offset4 well">
+				<legend>Connectez-vous</legend>
+									<h:form id="login_form">
+									<p:growl id="growl" showDetail="true" />
+					<div>
+						<p:inputText id="name" value="#{authBean.email}" placeholder="Login" styleClass="span12" />
+						<br />
+						<p:password id="password" value="#{authBean.password}" placeholder="Password" styleClass="span12" />
+						<h:commandButton action="#{authBean.login}" id="login_submit"
+							value="Se Connecter" styleClass="btn btn-inverse btn-block" />
+							
+					</div>
+										
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

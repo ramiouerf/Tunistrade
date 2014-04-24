@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Welcome page</title>
+
+</h:head>
+<h:body>
+	
+		<ui:composition template="/template/layout.xhtml">
+    	
+    		<ui:define name="content">
+
+    			<h2>Liste des banques</h2>
+    			
+    	<h:form>
+    <h:dataTable id="cars" var="mat" value="#{bankMB.banks}"  >  
+  
+       
+        <h:column headerText="capital" style="width:24%">  
+            <h:outputText value="#{mat.capital}" />  
+        </h:column>  
+  
+        <h:column headerText="nbTransaction" style="width:24%">  
+            <h:outputText value="#{mat.nbTransaction}" />  
+        </h:column>  
+  
+        <h:column headerText="salesPrice" style="width:24%">  
+            <h:outputText value="#{mat.salesPrice}" />  
+        </h:column>  
+            <h:column headerText="solvency" style="width:24%">  
+            <h:outputText value="#{mat.solvency}" />  
+        </h:column>  
+  
+       <h:column headerText="purchase" style="width:24%">  
+            <h:outputText value="#{mat.purchase}" />  
+        </h:column>  
+        
+  
+    </h:dataTable>
+</h:form>	  
+    			
+    			
+    		</ui:define>
+    		
+    		
+    	</ui:composition>
+	
+</h:body>
+</html>

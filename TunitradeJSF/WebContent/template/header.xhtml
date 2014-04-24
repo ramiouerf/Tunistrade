@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<body>
+	<ui:composition>
+		
+		<div class="masthead">
+			<h3 class="muted">
+			<img src="/Tunitrade/resources/img/logo.png" width="100" height="100" />
+				Bienvenue sur TuniTrade
+			</h3>
+
+			<h:form>
+
+					<p:growl id="messages" />
+
+
+					<p:menubar>
+						<p:menuitem value="&nbsp;Accueil" icon="ui-icon-home" url="#" />
+
+
+						<p:menuitem value="&nbsp;Administration" icon="ui-icon-pencil"
+							url="/admin/users.xhtml" />
+						
+						<p:submenu label="&nbsp;Banques" icon="ui-icon-circle-check">
+							<p:menuitem value="Ajouter Banque" url="/admin/addBank.xhtml" />
+							<p:menuitem value="Lister les banques" url="/admin/banks.xhtml" />
+							<p:menuitem value="Supprimer Banque" url="/admin/SupprimerBank.xhtml" />
+						</p:submenu>
+						
+					<f:facet name="options">
+							<h:form>
+								<p:commandButton
+									value="Se déconnecter (#{authBean.admin.login})"
+									action="#{authBean.logout()}" icon="ui-icon-extlink" />
+
+							</h:form>
+
+						</f:facet>
+						
+		
+					</p:menubar>
+
+
+				</h:form>
+			</div>
+
+	</ui:composition>
+</body>
+</html>
+
+
